@@ -2,7 +2,7 @@
 
 This is a proof-of-concept mod for Beat Saber that adds [Tilt Five](https://www.tiltfive.com/) support to the game.
 
-Video here: https://www.youtube.com/watch?v=Qy0c8g6vd5w
+Video here: https://youtu.be/dH0xym4nFSc
 
 ## Notes / Caveats
 
