@@ -31,9 +31,18 @@ _Assuming you have already modded Beat Saber:_
 
 1. **Make sure your copy of Beat Saber is already fully modded.** Short version: Install Beat Saber, run it, run [ModAssistant](https://github.com/Assistant/ModAssistant/releases) and install the core mods, then run Beat Saber once more.
 2. Copy all files from Beat Saber's `Beat Saber_Data\Managed` folder into `TargetReferences`.
-3. Copy `0Harmony.dll` from Beat Saber's `Libs` folder into `TargetReferences\ModDependencies\Harmony`.
-4. Open the solution, and build.
-5. Check the `bin\` folder for the project output, copy it into your Beat Saber folder, and you're done!
-6. Optionally, add `--verbose` to Beat Saber's launch options so you can view log output in real-time.
+3. If you have the [Beat Saber Modding Tools](https://github.com/Zingabopp/BeatSaberModdingTools) extension, open the solution, right click the project name in the Solution Explorer, and select `Beat Saber Modding Tools -> Set Beat Saber Directory...`
+4. If you don't have the mentioned extension, create a file called `TiltFive.csproj.user` add the following to it.
 
-I like to setup a symlink/junction to `TiltFive.dll` from my development folder for faster iteration times.
+```
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <BeatSaberDir>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber</BeatSaberDir> <!-- Make sure to change this path if your Beat Saber installation is saved somewhere else. -->
+  </PropertyGroup>
+</Project>
+```
+
+4. Open the solution, and build.
+5. By default, it will automatically copy to your Beat Saber plugins folder. If for some reason you want to disable this, add `<DisableCopyToGame>true</DisableCopyToGame>` to the PropertyGroup in the .user file, build the project, navigate to /bin/Plugins, copy the dll into your Plugins folder and you're done!'
+6. Optionally, add `--verbose` to Beat Saber's launch options so you can view log output in real-time.
