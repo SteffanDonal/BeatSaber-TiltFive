@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Plugin</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F0D9D03-EFAF-42CA-B802-A65CC2904921}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TiltFive</RootNamespace>
+    <AssemblyName>TiltFive</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Plugin|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Plugins\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>TargetReferences\ModDependencies\Harmony\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HMLib">
+      <HintPath>TargetReferences\HMLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IPA.Loader">
+      <HintPath>TargetReferences\IPA.Loader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Main">
+      <HintPath>TargetReferences\Main.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>TargetReferences\UnityEngine.AssetBundleModule.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>TargetReferences\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>TargetReferences\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>TargetReferences\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Patches\ControllerPatches.cs" />
+    <Compile Include="Patches\InitOnMainAvailable.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="SDK\Scripts\Core\NativePlugin.cs" />
+    <Compile Include="SDK\Scripts\GameBoard\GameBoard.cs" />
+    <Compile Include="SDK\Scripts\GameBoard\GameBoardSettings.cs" />
+    <Compile Include="SDK\Scripts\GameBoard\TableTopGizmo.cs" />
+    <Compile Include="SDK\Scripts\Glasses\Display.cs" />
+    <Compile Include="SDK\Scripts\Glasses\Glasses.cs" />
+    <Compile Include="SDK\Scripts\Glasses\SplitStereoCamera.cs" />
+    <Compile Include="SDK\Scripts\Glasses\SplitStereoTextures.cs" />
+    <Compile Include="SDK\Scripts\Logging\Log.cs" />
+    <Compile Include="SDK\Scripts\Settings\EditorSettings.cs" />
+    <Compile Include="SDK\Scripts\Settings\GlassesSettings.cs" />
+    <Compile Include="SDK\Scripts\Settings\ScaleSettings.cs" />
+    <Compile Include="SDK\Scripts\Settings\TrackableSettings.cs" />
+    <Compile Include="SDK\Scripts\TiltFiveManager.cs" />
+    <Compile Include="SDK\Scripts\Tracking\TrackableCore.cs" />
+    <Compile Include="SDK\Scripts\Utility\DontDestroyOnLoad.cs" />
+    <Compile Include="SDK\Scripts\Utility\Length.cs" />
+    <Compile Include="SDK\Scripts\Utility\Singleton.cs" />
+    <Compile Include="SDK\Scripts\Utility\UniformScaleTransform.cs" />
+    <Compile Include="SDK\Scripts\Utility\UnityExtensions.cs" />
+    <Compile Include="SDK\Scripts\Wand\Input.cs" />
+    <Compile Include="SDK\Scripts\Wand\Wand.cs" />
+    <Compile Include="SDK\Scripts\Wand\WandDevice.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="manifest.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDK\Meshes\Gameboard_LE.fbx" />
+    <None Include="SDK\Meshes\Gameboard_XE.fbx" />
+    <None Include="SDK\Meshes\Gameboard_XE_Raised.fbx" />
+    <None Include="SDK\Meshes\Materials\Black Plastic.mat" />
+    <None Include="SDK\Meshes\Materials\Border Material.mat" />
+    <None Include="SDK\Meshes\Materials\Surface Material.mat" />
+    <None Include="SDK\Meshes\Materials\White Plastic.mat" />
+    <None Include="SDK\Meshes\T5-Glasses.fbx" />
+    <None Include="SDK\Meshes\T5-Logo.fbx" />
+    <None Include="SDK\Meshes\T5-Wand.fbx" />
+    <None Include="SDK\Prefabs\Tilt Five Prototype.prefab" />
+    <None Include="SDK\Prefabs\Tilt Five Wand Model.prefab" />
+    <None Include="SDK\Resources\Shaders\SimpleBlendShader.shader" />
+    <None Include="SDK\Resources\Shaders\SplitScreenDisplayBlit.shader" />
+    <None Include="SDK\Scripts\Core\TiltFiveCore.asmdef" />
+    <None Include="SDK\Scripts\GameBoard\TiltFiveGameBoard.asmdef" />
+    <None Include="SDK\Scripts\Glasses\TiltFiveGlasses.asmdef" />
+    <None Include="SDK\Scripts\Logging\TiltFiveLogging.asmdef" />
+    <None Include="SDK\Scripts\Settings\TiltFiveSettings.asmdef" />
+    <None Include="SDK\Scripts\TiltFive.asmdef" />
+    <None Include="SDK\Scripts\Tracking\TiltFiveTracking.asmdef" />
+    <None Include="SDK\Scripts\Utility\TiltFiveUtility.asmdef" />
+    <None Include="SDK\Scripts\Wand\TiltFiveWand.asmdef" />
+    <EmbeddedResource Include="TiltFiveResources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SDK\Plugins\x86_64\TiltFiveUnity.dll" />
+    <Content Include="SDK\Resources\changelog.txt" />
+    <Content Include="SDK\Resources\pluginversion.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(TargetDir)..\Beat Saber_Data\Plugins" md "$(TargetDir)..\Beat Saber_Data\Plugins"
+set errorlevel=0
+
+robocopy "$(ProjectDir)SDK\Plugins" "$(TargetDir)..\Beat Saber_Data\Plugins" /MIR /E</PostBuildEvent>
+  </PropertyGroup>
+</Project>
