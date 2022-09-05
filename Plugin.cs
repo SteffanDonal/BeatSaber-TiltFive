@@ -129,6 +129,8 @@ namespace TiltFive
             camera.clearFlags = CameraClearFlags.SolidColor;
             camera.tag = "Untagged";
             camera.depthTextureMode = DepthTextureMode.Depth;
+            camera.rect = new Rect(0, 0, 1, 1);
+            camera.depth = 100;
 
             Log.Debug("Cleaning up children...");
 
@@ -153,7 +155,7 @@ namespace TiltFive
                 headPoseCamera = camera,
                 nearClipPlane = 0.3f,
                 farClipPlane = 5000f,
-                glassesMirrorMode = GlassesMirrorMode.None
+                glassesMirrorMode = GlassesMirrorMode.RightEye
             };
 
             manager.gameBoardSettings = new GameBoardSettings
