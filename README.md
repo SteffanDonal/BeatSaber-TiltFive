@@ -30,15 +30,15 @@ _Assuming you have already modded Beat Saber:_
 ## Development Setup
 
 1. **Make sure your copy of Beat Saber is already fully modded.** Short version: Install Beat Saber, run it, run [ModAssistant](https://github.com/Assistant/ModAssistant/releases) and install the core mods, then run Beat Saber once more.
-2. Copy all files from Beat Saber's `Beat Saber_Data\Managed` folder into `TargetReferences`.
-3. If you have the [Beat Saber Modding Tools](https://github.com/Zingabopp/BeatSaberModdingTools) extension, open the solution, right click the project name in the Solution Explorer, and select `Beat Saber Modding Tools -> Set Beat Saber Directory...`
-4. If you don't have the mentioned extension, create a file called `TiltFive.csproj.user` add the following to it.
+2. If you have the [Beat Saber Modding Tools](https://github.com/Zingabopp/BeatSaberModdingTools) extension, open the solution, right click the project name in the Solution Explorer, and select `Beat Saber Modding Tools -> Set Beat Saber Directory...`
+3. If you don't have the mentioned extension, create a file called `TiltFive.csproj.user` add the following to it.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <BeatSaberDir>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber</BeatSaberDir> <!-- Make sure to change this path if your Beat Saber installation is saved somewhere else. -->
+    <!-- Make sure to change this path if your Beat Saber installation is saved somewhere else. -->
+    <BeatSaberDir>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber</BeatSaberDir>
   </PropertyGroup>
 </Project>
 ```
