@@ -3,18 +3,11 @@ using IPA;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using TiltFive.Logging;
 using UnityEngine;
 using UnityEngine.XR;
 using IPALogger = IPA.Logging.Logger;
 using Object = UnityEngine.Object;
-
-[assembly: AssemblyTitle("TiltFive")]
-[assembly: AssemblyFileVersion("0.0.1")]
-[assembly: AssemblyCopyright("MIT License - Copyright © 2022 Steffan Donal")]
-
-[assembly: Guid("d2103150-3ad9-472b-a4d4-a356fffd664e")]
 
 namespace TiltFive
 {
