@@ -44,5 +44,5 @@ _Assuming you have already modded Beat Saber:_
 ```
 
 4. Open the solution, and build.
-5. By default, it will automatically copy to your Beat Saber plugins folder. If for some reason you want to disable this, add `<DisableCopyToGame>true</DisableCopyToGame>` to the PropertyGroup in the .user file, build the project, navigate to /bin/Plugins, copy the dll into your Plugins folder and you're done!'
+5. By default, it will automatically copy to your Beat Saber plugins folder. If for some reason you want to disable this, add `<DisableCopyToGame>true</DisableCopyToGame>` to the PropertyGroup in the .user file, build the project, navigate to /bin/Plugins, copy the dll into your Plugins folder and you're done!
 6. Optionally, add `--verbose` to Beat Saber's launch options so you can view log output in real-time.
