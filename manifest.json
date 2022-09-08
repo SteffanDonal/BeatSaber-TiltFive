@@ -10,5 +10,8 @@
   "version": "0.0.1",
   "links": {
     "project-source": "https://github.com/SteffanDonal/BeatSaber-TiltFive"
-  }
+  },
+  "files": [
+    "Libs/Native/TiltFiveUnity.dll"
+  ]
 }

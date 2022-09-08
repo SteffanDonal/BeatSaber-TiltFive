@@ -16,16 +16,23 @@
     <BeatSaberDir>$(LocalRefsDir)</BeatSaberDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Plugin|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Plugins\</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
+    <DebugType>none</DebugType>
     <WarningLevel>4</WarningLevel>
-    <ErrorOnMismatchedVersions>true</ErrorOnMismatchedVersions>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath>bin\Plugins\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath>bin\Release\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorOnMismatchedVersions>true</ErrorOnMismatchedVersions>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -123,10 +130,16 @@
     <EmbeddedResource Include="TiltFiveResources" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SDK\Plugins\x86_64\TiltFiveUnity.dll" />
+    <Content Include="SDK\Plugins\x86_64\TiltFiveUnity.dll" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="SDK\Resources\changelog.txt" />
     <Content Include="SDK\Resources\pluginversion.txt" />
   </ItemGroup>
+  <Target Name="TiltFive_SetPlugin" BeforeTargets="BSMT_SetOutputs" DependsOnTargets="BSMT_AfterBuild">
+    <ItemGroup>
+      <OutputCopy Include="$(OutputAssemblyName).dll" OutputPath="Plugins\$(AssemblyName).dll" />
+      <OutputCopy Include="SDK\Plugins\x86_64\TiltFiveUnity.dll" OutputPath="Libs\Native\TiltFiveUnity.dll" />
+    </ItemGroup>
+  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <PackageReference Include="BeatSaberModdingTools.Tasks" Version="2.0.0-beta4">

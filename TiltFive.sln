@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29728.190
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiltFive", "TiltFive.csproj", "{7F0D9D03-EFAF-42CA-B802-A65CC2904921}"
 EndProject
@@ -14,10 +14,13 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Plugin|Any CPU = Plugin|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7F0D9D03-EFAF-42CA-B802-A65CC2904921}.Plugin|Any CPU.ActiveCfg = Plugin|Any CPU
 		{7F0D9D03-EFAF-42CA-B802-A65CC2904921}.Plugin|Any CPU.Build.0 = Plugin|Any CPU
+		{7F0D9D03-EFAF-42CA-B802-A65CC2904921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0D9D03-EFAF-42CA-B802-A65CC2904921}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
